@@ -1,0 +1,30 @@
+[project]
+name = "telemetrylens"
+version = "0.1.0"
+description = "Explainable quality reports, operating-cycle views and engineering insights from raw machine telemetry."
+requires-python = ">=3.10"
+dependencies = [
+    "streamlit>=1.40",
+    "pandas>=2.2",
+    "numpy>=1.26",
+    "scipy>=1.11",
+    "plotly>=5.20",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[tool.setuptools]
+packages = ["telemetrylens"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["slow: renders the full Streamlit app (about 15 s)"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["E731"]

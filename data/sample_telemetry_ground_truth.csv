@@ -1,0 +1,21 @@
+fault,machine_id,sensor,start,end,n_samples,note
+data_gap,CNC_01,,2026-10-22 09:12:00+00:00,2026-10-22 09:27:00+00:00,900,Logger offline for 15 minutes: rows are missing entirely.
+cooling_fault,CNC_02,temperature_c,2026-10-22 09:04:22+00:00,2026-10-22 09:28:56+00:00,1475,Temperature climbs during cycle 208 while load is normal.
+vibration_spike,CNC_03,vibration_mm_s,2026-10-22 06:11:52+00:00,2026-10-22 06:11:52+00:00,1,Single-sample impact spike above the critical zone.
+vibration_spike,CNC_03,vibration_mm_s,2026-10-22 07:21:00+00:00,2026-10-22 07:21:00+00:00,1,Single-sample impact spike above the critical zone.
+vibration_spike,CNC_03,vibration_mm_s,2026-10-22 07:56:19+00:00,2026-10-22 07:56:19+00:00,1,Single-sample impact spike above the critical zone.
+vibration_spike,CNC_03,vibration_mm_s,2026-10-22 08:14:10+00:00,2026-10-22 08:14:10+00:00,1,Single-sample impact spike above the critical zone.
+vibration_spike,CNC_03,vibration_mm_s,2026-10-22 09:47:40+00:00,2026-10-22 09:47:40+00:00,1,Single-sample impact spike above the critical zone.
+vibration_spike,CNC_03,vibration_mm_s,2026-10-22 09:56:45+00:00,2026-10-22 09:56:45+00:00,1,Single-sample impact spike above the critical zone.
+vibration_spike,CNC_03,vibration_mm_s,2026-10-22 10:40:52+00:00,2026-10-22 10:40:52+00:00,1,Single-sample impact spike above the critical zone.
+vibration_spike,CNC_03,vibration_mm_s,2026-10-22 11:05:19+00:00,2026-10-22 11:05:19+00:00,1,Single-sample impact spike above the critical zone.
+vibration_spike,CNC_03,vibration_mm_s,2026-10-22 11:27:27+00:00,2026-10-22 11:27:27+00:00,1,Single-sample impact spike above the critical zone.
+vibration_spike,CNC_03,vibration_mm_s,2026-10-22 12:03:26+00:00,2026-10-22 12:03:26+00:00,1,Single-sample impact spike above the critical zone.
+vibration_spike,CNC_03,vibration_mm_s,2026-10-22 12:45:33+00:00,2026-10-22 12:45:33+00:00,1,Single-sample impact spike above the critical zone.
+vibration_spike,CNC_03,vibration_mm_s,2026-10-22 13:20:18+00:00,2026-10-22 13:20:18+00:00,1,Single-sample impact spike above the critical zone.
+sensor_dropout,MOTOR_01,temperature_c,2026-10-22 08:24:00+00:00,2026-10-22 08:33:58+00:00,300,Temperature sensor disconnected for 10 minutes.
+implausible_temperature,MOTOR_02,temperature_c,2026-10-22 07:09:34.006105524+00:00,2026-10-22 13:37:23.672127256+00:00,5,Sentinel value -999 written by the controller.
+implausible_rpm,MOTOR_02,rpm,2026-10-22 06:52:45.557689187+00:00,2026-10-22 13:34:08.038356230+00:00,3,Sentinel value 99999 written by the controller.
+irregular_sampling,MOTOR_02,,2026-10-22 06:00:00.027697526+00:00,2026-10-22 13:59:58.414879367+00:00,13988,2 s nominal interval with ±0.6 s jitter and ~3% dropped samples.
+duplicate_rows,CNC_01,,,,20,Exact duplicate rows re-sent by the logger.
+out_of_order_rows,CNC_03,,,,10,Adjacent rows swapped in the file (logger buffering).
