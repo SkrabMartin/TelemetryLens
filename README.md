@@ -130,19 +130,41 @@ Parquet later.
   certainty.
 - Units are converted only for the listed source units. Mixed units within one column are not detected.
 
-## Project layout
+## Repository layout
 
 ```
-app.py                     Streamlit UI
-telemetrylens/schema.py    data dictionary: fields, units, ranges, thresholds, aliases
-telemetrylens/generator.py synthetic telemetry with ground-truth faults
-telemetrylens/ingest.py    CSV import, column mapping, validation, timezone handling
-telemetrylens/quality.py   quality report and logged cleaning
-telemetrylens/cycles.py    cycles, phases, time in state
-telemetrylens/insights.py  statistics, thresholds, anomaly flags, correlations, window comparison
-telemetrylens/report.py    reproducible Markdown and JSON reports
-telemetrylens/charts.py    Plotly figures with a fixed, colour-blind-checked palette
-telemetrylens/faultcheck.py planted vs detected faults
-scripts/                   data generator CLI and benchmark
-tests/                     pytest suite
+telemetrylens/
+├── .streamlit/
+│   └── config.toml                     Streamlit theme and server settings
+├── data/
+│   ├── sample_telemetry.csv            demo dataset: 5 machines, 8 hours, ~114k rows
+│   └── sample_telemetry_ground_truth.csv  faults planted in the demo dataset
+├── scripts/
+│   ├── benchmark.py                    timing of parse, quality, cycles and insights per file size
+│   └── generate_data.py                CLI for the synthetic data generator
+├── telemetrylens/                      analysis package (no Streamlit imports)
+│   ├── __init__.py
+│   ├── schema.py                       data dictionary: fields, units, ranges, thresholds, aliases
+│   ├── generator.py                    synthetic telemetry with ground-truth faults
+│   ├── ingest.py                       CSV import, column mapping, validation, timezone and unit handling
+│   ├── quality.py                      quality report and logged cleaning
+│   ├── cycles.py                       cycles, operating phases, time in state
+│   ├── insights.py                     statistics, thresholds, anomaly flags, correlations, window comparison
+│   ├── report.py                       reproducible Markdown and JSON reports
+│   ├── charts.py                       Plotly figures with a fixed, colour-blind-checked palette
+│   └── faultcheck.py                   planted vs detected faults
+├── tests/
+│   ├── conftest.py                     shared fixtures (generated dataset)
+│   ├── test_app.py                     full app render (marked slow)
+│   ├── test_cycles.py
+│   ├── test_generator.py
+│   ├── test_ingest.py
+│   ├── test_insights.py
+│   ├── test_quality.py
+│   └── test_report_and_faults.py
+├── .gitignore
+├── app.py                              Streamlit UI: sidebar filters and the six tabs
+├── pyproject.toml                      package metadata, pytest and Ruff settings
+├── README.md
+└── requirements.txt                    runtime and dev dependencies
 ```
